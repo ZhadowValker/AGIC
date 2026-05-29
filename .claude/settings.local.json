@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -oiP '\"[^\"]{3,80}\"' /home/bobby/Projects/WC26-WS/WC26/assets/index-dcac09d0.js)",
+      "Bash(grep -oiP '\"[^\"]{3,120}\"' /home/bobby/Projects/WC26-WS/WC26/assets/index-dcac09d0.js)",
+      "Bash(grep -oiP '\"[^\"]{3,120}\"' /home/bobby/Projects/WC26-WS/WC26/assets/index-ClianWoJ.js)",
+      "Bash(grep -oiP '\"[^\"]{3,200}\"' /home/bobby/Projects/WC26-WS/WC26/assets/index-ClianWoJ.js)",
+      "Bash(grep -oP '\"[^\"]{10,200}\"' /home/bobby/Projects/WC26-WS/WC26/assets/index-dcac09d0.js)",
+      "Bash(grep -oP '\"[^\"]{10,300}\"' /home/bobby/Projects/WC26-WS/WC26/assets/index-dcac09d0.js)",
+      "Bash(grep -oP '\"[^\"]{10,300}\"' /home/bobby/Projects/WC26-WS/WC26/assets/index-ClianWoJ.js)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(pip install *)",
+      "Bash(export *)",
+      "Bash(/home/bobby/.local/bin/graphify *)",
+      "Bash(grep -oP '\"[^\"]{3,50}\"' /home/bobby/Projects/WC26-WS/WC26/assets/index-dcac09d0.js)",
+      "Bash(grep -oP '\"[^\"]{3,50}\"' /home/bobby/Projects/WC26-WS/WC26/assets/index-ClianWoJ.js)",
+      "Bash(grep -oP '\"[^\"]{3,80}\"' /home/bobby/Projects/WC26-WS/WC26/assets/index-dcac09d0.js)",
+      "Bash(grep -oP '\"[^\"]{3,80}\"' /home/bobby/Projects/WC26-WS/WC26/assets/index-ClianWoJ.js)"
+    ]
+  }
+}

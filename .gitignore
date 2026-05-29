@@ -1,1 +1,15 @@
-.claude/
+# Windows Zone.Identifier metadata files
+*Zone.Identifier
+*.Identifier
+*#Uf03a*
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Graphify analysis output (dev tool, not for deployment)
+graphify-out/
+
+# Node / build
+node_modules/
+dist/
