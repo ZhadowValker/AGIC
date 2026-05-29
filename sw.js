@@ -2,7 +2,7 @@
 const CACHE_NAME = 'agic-wc26-v1';
 const ASSETS = [
   './',
-  './AGIC-WC-2026.html',
+  './index.html',
   './assets/women-conf-logo.png',
   './assets/favicon.png',
   './assets/pastor-elizabeth.jpg',

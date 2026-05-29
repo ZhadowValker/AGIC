@@ -1,16 +1,305 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/png" href="/assets/favicon.png" />
-		<meta name="generator" content="Amazing God International Ministries" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Amazing God International Ministries</title>
-		<script type="module" crossorigin src="/assets/index-dcac09d0.js"></script>
-		<link rel="stylesheet" href="/assets/index-45225e2a.css">
-	</head>
-	<body>
-		<div id="root"></div>
-	</body>
-	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGIC Women's Conference 2026</title>
+    <!-- FIX #1: favicon href was empty -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta name="theme-color" content="#4a044e">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .speaker-img { width:100%; height:180px; object-fit:cover; object-position:top center; border-radius:0.5rem 0.5rem 0 0; }
+        .gold-bar { background: linear-gradient(90deg, #b8892a, #e8c84a, #b8892a); }
+        .hero-glow { background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(156,21,96,0.18) 0%, transparent 70%); }
+        @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+        .fade-up { animation: fadeUp 0.6s ease forwards; opacity:0; }
+        .fade-up-1 { animation-delay:0.1s } .fade-up-2 { animation-delay:0.2s }
+        .fade-up-3 { animation-delay:0.3s } .fade-up-4 { animation-delay:0.4s }
+        .fade-up-5 { animation-delay:0.5s }
+        .pill-tag { display:inline-block; background:linear-gradient(90deg,#7e1570,#b5124a); color:white; font-size:0.6rem; letter-spacing:0.18em; padding:3px 10px; border-radius:999px; text-transform:uppercase; margin-bottom:6px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- NAV -->
+    <!-- FIX #2: /assets/ -> assets/ (relative paths throughout) -->
+    <nav class="px-6 py-4 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
+        <a href="#"><img src="assets/women-conf-logo.png" alt="AGIC Logo" class="h-10 w-auto"></a>
+        <div class="flex items-center gap-6 text-xs font-bold uppercase tracking-widest text-slate-600">
+            <a href="#speakers" class="hidden sm:block hover:text-purple-900 transition">Speakers</a>
+            <a href="#experience" class="hidden sm:block hover:text-purple-900 transition">Experience</a>
+            <a href="#event" class="hidden sm:block hover:text-purple-900 transition">Venue</a>
+            <!-- FIX #9: Added aria-label for accessibility -->
+            <button onclick="openModal()" aria-label="Open registration form" class="bg-purple-900 text-white px-6 py-2.5 rounded-full hover:bg-purple-800 transition text-xs cursor-pointer">Register</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="relative bg-white overflow-hidden hero-glow">
+        <div class="w-full relative">
+            <img src="assets/women-conf-logo.png" alt="AGIC Women's Conference 2026" class="w-full h-auto block">
+        </div>
+    </header>
+
+    <!-- INFO CARDS -->
+    <div class="bg-white py-6 px-6 border-b border-slate-100">
+        <div class="max-w-3xl mx-auto">
+            <div class="gold-bar h-0.5 w-24 mx-auto mb-5 rounded-full"></div>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8">
+                <div class="text-center">
+                    <div class="text-xs uppercase tracking-widest text-slate-500 mb-1">Date</div>
+                    <div class="text-2xl font-black text-purple-900">July 3 <span class="text-pink-700">&amp;</span> 4, 2026</div>
+                    <div class="text-xs text-slate-500 tracking-widest uppercase mt-0.5">Friday &amp; Saturday</div>
+                </div>
+                <div class="hidden sm:block w-px h-12 bg-slate-200"></div>
+                <div class="text-center">
+                    <div class="text-xs uppercase tracking-widest text-slate-500 mb-1">Venue</div>
+                    <div class="text-base font-bold text-purple-900">Amazing God International Church</div>
+                    <div class="text-xs text-slate-500 tracking-wide mt-0.5">12 High Street, Brookeville, Olney, MD 20833</div>
+                </div>
+                <div class="hidden sm:block w-px h-12 bg-slate-200"></div>
+                <div class="text-center">
+                    <div class="text-xs uppercase tracking-widest text-slate-500 mb-1">Contact</div>
+                    <a href="tel:7035772569" class="text-base font-bold text-purple-900 hover:text-pink-700 transition">703 577 2569</a>
+                </div>
+            </div>
+            <div class="gold-bar h-0.5 w-24 mx-auto mt-5 rounded-full"></div>
+        </div>
+    </div>
+
+    <!-- VERSE BANNER -->
+    <div class="bg-purple-950 py-8 px-6 text-center">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-xl sm:text-2xl italic font-light text-white leading-relaxed" style="font-family:Georgia,serif">
+                &ldquo;She is clothed with <span class="text-yellow-300 not-italic font-semibold">strength</span> and <span class="text-yellow-300 not-italic font-semibold">dignity</span>,<br>
+                and she laughs without fear of the future.&rdquo;
+            </p>
+            <p class="text-pink-400 text-xs uppercase tracking-widest mt-3 font-bold">— Proverbs 31:25</p>
+        </div>
+    </div>
+
+    <!-- SPEAKERS -->
+    <section id="speakers" class="py-16 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <p class="text-center text-xs uppercase tracking-widest text-purple-700 font-bold mb-2">Featured Speakers</p>
+            <h2 class="text-3xl font-black text-purple-900 mb-10 text-center">Women of Purpose &amp; Power</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-5">
+
+                <div class="text-center bg-white rounded-xl shadow-sm hover:shadow-lg transition overflow-hidden fade-up fade-up-1">
+                    <!-- FIX #2 + #6: relative path, consolidated to single optimised pastor-elizabeth.jpg -->
+                    <img src="assets/pastor-elizabeth.jpg" alt="Ps. Elizabeth Amara" class="w-full h-auto block speaker-img">
+                    <div class="p-3">
+                        <p class="font-bold text-sm text-purple-900">Ps. Elizabeth Amara</p>
+                        <p class="text-xs text-slate-500 mt-1">Women's Ministry · AGIC</p>
+                    </div>
+                </div>
+
+                <div class="text-center bg-white rounded-xl shadow-sm hover:shadow-lg transition overflow-hidden fade-up fade-up-2">
+                    <!-- FIX #2: relative path, compressed JPG -->
+                    <img src="assets/pastor-tommie.jpg" alt="Ps. Tommie Scott" class="w-full h-auto block speaker-img">
+                    <div class="p-3">
+                        <p class="font-bold text-sm text-purple-900">Ps. Tommie Scott</p>
+                        <p class="text-xs text-slate-500 mt-1">Guest Speaker</p>
+                    </div>
+                </div>
+
+                <div class="text-center bg-white rounded-xl shadow-sm hover:shadow-lg transition overflow-hidden fade-up fade-up-3">
+                    <!-- FIX #7: pastor-jannet.png -> pastor-janet.jpg (typo fixed) -->
+                    <!-- FIX #8: "Ps. Janet" -> full name -->
+                    <img src="assets/pastor-janet.jpg" alt="Ps. Janet Thomas" class="w-full h-auto block speaker-img">
+                    <div class="p-3">
+                        <p class="font-bold text-sm text-purple-900">Ps. Janet Thomas</p>
+                        <p class="text-xs text-slate-500 mt-1">Guest Speaker</p>
+                    </div>
+                </div>
+
+                <div class="text-center bg-white rounded-xl shadow-sm hover:shadow-lg transition overflow-hidden fade-up fade-up-4">
+                    <!-- FIX #2: relative path, compressed JPG -->
+                    <img src="assets/sis-ammajan.jpg" alt="Sis. Ammajan" class="w-full h-auto block speaker-img">
+                    <div class="p-3">
+                        <p class="font-bold text-sm text-purple-900">Sis. Ammajan</p>
+                        <p class="text-xs text-slate-500 mt-1">Guest Speaker</p>
+                    </div>
+                </div>
+
+                <div class="text-center bg-white rounded-xl shadow-sm hover:shadow-lg transition overflow-hidden fade-up fade-up-5">
+                    <!-- FIX #2: relative path -->
+                    <img src="assets/dr-swapna-1.jpg" alt="Dr. Swapna Penugula" class="w-full h-auto block speaker-img">
+                    <div class="p-3">
+                        <p class="font-bold text-sm text-purple-900">Dr. Swapna Penugula</p>
+                        <p class="text-xs text-slate-500 mt-1">India Ministry Coord.</p>
+                        <p class="text-xs text-slate-500 mt-0.5" style="font-size:0.6rem;">Worship Leader &amp; Teacher</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE PILLARS -->
+    <section id="experience" class="bg-white py-12 px-6 border-b border-slate-100">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-center text-xs uppercase tracking-widest text-purple-700 font-bold mb-6">Experience</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center p-5 rounded-xl bg-slate-50 border border-slate-100 hover:border-purple-200 hover:shadow-md transition">
+                    <div class="text-3xl mb-2">📖</div>
+                    <div class="text-xs font-bold uppercase tracking-wide text-purple-900">Powerful Teaching</div>
+                </div>
+                <div class="text-center p-5 rounded-xl bg-slate-50 border border-slate-100 hover:border-purple-200 hover:shadow-md transition">
+                    <div class="text-3xl mb-2">🙏</div>
+                    <div class="text-xs font-bold uppercase tracking-wide text-purple-900">Prayer &amp; Worship</div>
+                </div>
+                <div class="text-center p-5 rounded-xl bg-slate-50 border border-slate-100 hover:border-purple-200 hover:shadow-md transition">
+                    <div class="text-3xl mb-2">👑</div>
+                    <div class="text-xs font-bold uppercase tracking-wide text-purple-900">Empowerment Sessions</div>
+                </div>
+                <div class="text-center p-5 rounded-xl bg-slate-50 border border-slate-100 hover:border-purple-200 hover:shadow-md transition">
+                    <div class="text-3xl mb-2">🤝</div>
+                    <div class="text-xs font-bold uppercase tracking-wide text-purple-900">Sisterhood &amp; Community</div>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 mt-8">
+                <span class="pill-tag">Be Encouraged</span>
+                <span class="pill-tag">Be Equipped</span>
+                <span class="pill-tag">Be Empowered</span>
+                <span class="pill-tag">Be Transformed</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- VENUE / EVENT INFO -->
+    <section id="event" class="py-16 bg-white border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="text-center text-xs uppercase tracking-widest text-purple-700 font-bold mb-2">Location &amp; Details</p>
+            <h2 class="text-3xl font-black text-purple-900 mb-10 text-center">Event Information</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-5">
+                    <div class="flex gap-4 items-start p-5 rounded-xl bg-slate-50 border border-slate-100">
+                        <div class="text-2xl">📍</div>
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-purple-700 font-bold mb-1">Venue</div>
+                            <div class="font-bold text-purple-900">Amazing God International Church</div>
+                            <div class="text-sm text-slate-600 mt-1">12 High Street (Georgia Avenue)<br>Brookeville, Olney, MD 20833<br>Maryland, USA</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start p-5 rounded-xl bg-slate-50 border border-slate-100">
+                        <div class="text-2xl">📅</div>
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-purple-700 font-bold mb-1">Dates</div>
+                            <div class="font-bold text-purple-900">July 3 &amp; 4, 2026</div>
+                            <div class="text-sm text-slate-600 mt-1">Friday &amp; Saturday</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start p-5 rounded-xl bg-slate-50 border border-slate-100">
+                        <div class="text-2xl">📞</div>
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-purple-700 font-bold mb-1">Contact</div>
+                            <a href="tel:7035772569" class="font-bold text-purple-900 hover:text-pink-700 transition text-lg">703 577 2569</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start p-5 rounded-xl bg-slate-50 border border-slate-100">
+                        <div class="text-2xl">🏛️</div>
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-purple-700 font-bold mb-1">Ministry</div>
+                            <div class="font-bold text-purple-900">Amazing God International Ministries</div>
+                            <div class="text-sm text-slate-500 mt-0.5 italic">"Each One Preach One"</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIX #5: Corrected Google Maps embed for 12 High St, Brookeville MD 20833 -->
+                <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3097.5823634!2d-77.0574!3d39.1812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b62e6b4e8b1111%3A0x1!2s12+High+St%2C+Brookeville%2C+MD+20833!5e0!3m2!1sen!2sus!4v1748000000000"
+                        width="100%" height="320" style="border:0;display:block"
+                        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="AGIC Venue Map — 12 High St, Brookeville MD">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTER CTA -->
+    <section id="register" class="bg-purple-950 py-16 px-6 text-center">
+        <div class="max-w-xl mx-auto">
+            <p class="text-xs uppercase tracking-widest text-pink-400 font-bold mb-3">Don't Miss Out</p>
+            <h2 class="text-3xl font-black text-white mb-4">Your Invitation Awaits</h2>
+            <p class="text-purple-300 text-sm mb-8">Join us for two powerful days — empowered by faith, called for purpose.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="openModal()" aria-label="Open registration form" class="bg-gradient-to-r from-pink-700 to-purple-700 text-white font-bold px-10 py-4 rounded-full hover:opacity-90 transition text-sm uppercase tracking-widest shadow-lg cursor-pointer">Register Now</button>
+                <a href="#speakers"
+                   class="border border-purple-400 text-purple-200 font-bold px-10 py-4 rounded-full hover:bg-purple-900 transition text-sm uppercase tracking-widest">
+                    Meet the Speakers
+                </a>
+            </div>
+            <div class="mt-10 flex flex-wrap justify-center gap-6 text-sm text-purple-400">
+                <span>📞 703 577 2569</span>
+                <span>📍 Brookeville, Olney, MD 20833</span>
+                <span>📅 July 3–4, 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-8 px-6 text-center border-t border-purple-950">
+        <div class="text-purple-400 font-black tracking-widest text-sm mb-1">AGIC WOMEN'S CONFERENCE 2026</div>
+        <div class="text-purple-600 italic text-xs mb-4">Empowered by Faith. Called for Purpose.</div>
+        <div class="flex justify-center gap-6 text-xs text-slate-600 uppercase tracking-widest flex-wrap mb-4">
+            <a href="#" class="hover:text-purple-400 transition">Home</a>
+            <a href="#speakers" class="hover:text-purple-400 transition">Speakers</a>
+            <a href="#event" class="hover:text-purple-400 transition">Venue</a>
+            <button onclick="openModal()" class="hover:text-purple-400 transition cursor-pointer bg-transparent border-0 text-slate-600 text-xs uppercase tracking-widest">Register</button>
+        </div>
+        <div class="text-slate-700 text-xs">© 2026 Amazing God International Ministries · Amazing God International Church, Maryland USA</div>
+    </footer>
+
+    <!-- REGISTRATION MODAL -->
+    <div id="reg-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4" style="background:rgba(10,0,20,0.82);backdrop-filter:blur(6px)" role="dialog" aria-modal="true" aria-label="Registration Form">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg relative overflow-hidden" style="max-height:92vh;overflow-y:auto">
+            <div class="bg-purple-950 px-6 py-5 text-center relative">
+                <button onclick="closeModal()" aria-label="Close registration form" class="absolute top-4 right-4 text-white/50 hover:text-white text-xl font-bold leading-none">✕</button>
+                <div class="text-yellow-400 text-xs uppercase tracking-widest font-bold mb-1">AGIC Women's Conference 2026</div>
+                <div class="text-white font-black text-xl">Register Now</div>
+                <div class="text-purple-300 text-xs mt-1">July 3 &amp; 4, 2026 · Brookeville, Olney, MD</div>
+            </div>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfkU5qOMkDSZ8qBW4XyZ0FgVKi1Rgqfmog1ut85VBa6VWOKlA/viewform?embedded=true" width="100%" height="1429" frameborder="0" marginheight="0" marginwidth="0" title="Registration Form">Loading…</iframe>
+        </div>
+    </div>
+
+    <script>
+        // FIX #4: sw.js now exists — registration will succeed
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log('SW Registered'))
+                .catch(err => console.warn('SW registration failed:', err));
+        }
+
+        function openModal() {
+            const m = document.getElementById('reg-modal');
+            m.classList.remove('hidden');
+            m.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const m = document.getElementById('reg-modal');
+            m.classList.add('hidden');
+            m.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Close on backdrop click
+        document.getElementById('reg-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // FIX #9: Close modal on Escape key for accessibility
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
 </html>
